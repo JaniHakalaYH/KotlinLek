@@ -6,52 +6,42 @@ import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
 import java.util.Scanner
-
+//TODO: Uppgift 1 från 2021 års advent of code
 fun main() {
     val file = Path.of("src/main/kotlin/Uppgift1/Before/DepthInput")
     readFileLineByLine(file)
     readFileThreeLinesAtATime(file)
 }
-
-fun readFileLineByLine(file: Path): Int{
-
+fun readFileLineByLine(fileName: Path): Int {
     var counter = 0
-    var tempLine = 0
-    try{
-        val sc = Scanner(file)
-        while(sc.hasNextInt()){
-            val line = sc.nextInt()
-                 if(tempLine < line){
-                    counter++
-                 }
-            tempLine = line
+    val list = Files.readAllLines((fileName)).map { it.toInt() }
+    repeat(list.size - 1) {
+        if (list[it] < list[it + 1]) {
+            counter++
         }
-        counter--
-        println(counter)
-
-    }catch (e: IOException){
-        e.printStackTrace()
     }
     return counter
 }
-fun readFileThreeLinesAtATime(fileName: Path): Int{
+fun readFileThreeLinesAtATime(fileName: Path): Int {
     var counter = 0
 
     try {
-        val list = Files.readAllLines((fileName))
-        val intList = list.map { it.toInt() }
+        val intList = Files.readAllLines((fileName)).map { it.toInt() }
         val newlist = intList.windowed(3, 1) { it.sum() }
-        repeat(newlist.size - 1) {
-            if (newlist.get(it) < newlist.get(it + 1)) {
-                counter++
+            repeat(newlist.size - 1) {
+                if (newlist[it] < newlist[it + 1]) {
+                    counter++
+                }
             }
+            println(counter)
+        }catch (e: IOException) {
+            e.printStackTrace()
         }
-        println(counter)
-    } catch (e: IOException) {
-        e.printStackTrace()
-    }
     return counter
 }
+
+
+
 
 
 

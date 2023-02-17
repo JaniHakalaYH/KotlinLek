@@ -4,7 +4,7 @@ import java.io.IOException
 import java.nio.file.Files
 import java.nio.file.Path
 
-
+//TODO: Uppgift 2 från 2021 års advent of code
 fun main(){
     val file = Path.of("src/main/kotlin/Uppgift2/Before/MovementInput")
     getSubmarineInput(readSubmarineInputsFromFile(file))
@@ -44,21 +44,12 @@ fun getAdvancedSubmarineInput(inputList: List<String>): Int{
     var aim = 0
     for(i in inputList.indices)
             when{
+                inputList[i].contains("down") -> aim += separateString(inputList[i])
+                inputList[i].contains("up") -> aim -= separateString(inputList[i])
                 inputList[i].contains("forward") -> {
                     horizontal += separateString(inputList[i])
-
-                }
-                inputList[i].contains("down") -> {
-                    depth += separateString(inputList[i])
-                    aim += separateString(inputList[i])
-                }
-                inputList[i].contains("up") ->{
-                    depth -= separateString(inputList[i])
-                    aim -= separateString(inputList[i])
+                    depth += aim * separateString(inputList[i])
                 }
             }
-    println(depth)
-    println(aim)
-    println(horizontal*depth)
     return horizontal*depth
 }

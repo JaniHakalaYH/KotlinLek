@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.*
 import kotlin.io.path.Path
 
-class MethodsKtTest {
+class MainKtTest {
     val testfile = Path("src/test/kotlin/Uppgift1/Before/InputTest")
     val testMethods: Int = readFileLineByLine(testfile)
     val testMethods2: Int = readFileThreeLinesAtATime(testfile)

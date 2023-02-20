@@ -1,11 +1,9 @@
 package Uppgift1.Before
 
-import java.io.File
 import java.io.IOException
 import java.nio.file.Files
 import java.nio.file.Path
-import java.nio.file.Paths
-import java.util.Scanner
+
 //TODO: Uppgift 1 från 2021 års advent of code
 fun main() {
     val file = Path.of("src/main/kotlin/Uppgift1/Before/DepthInput")

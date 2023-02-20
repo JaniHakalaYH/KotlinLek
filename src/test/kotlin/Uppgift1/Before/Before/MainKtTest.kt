@@ -1,5 +1,7 @@
-package Uppgift1.Before
+package Uppgift1.Before.Before
 
+import Uppgift1.Before.readFileLineByLine
+import Uppgift1.Before.readFileThreeLinesAtATime
 import org.junit.jupiter.api.Test
 
 import org.junit.jupiter.api.Assertions.*

@@ -12,7 +12,6 @@ import static org.junit.Assert.assertFalse;
 
 public class RekursionKtTest {
     Rekursion r = new Rekursion();
-
     List<String> uTomten = Arrays.asList("Tröger", "Trötter", "Blyger", "Dammråttan", "Skumtomten", "Glader",
             "Butter", "Rådjuret", "Nyckelpigan", "Haren", "Räven", "Gråsuggan", "Myran", "Bladlusen");
     List<String> uGlader = Arrays.asList("Tröger", "Trötter", "Blyger", "Dammråttan", "Skumtomten");
@@ -23,62 +22,60 @@ public class RekursionKtTest {
     List<String> uRäven = Arrays.asList("Gråsuggan", "Myran", "Bladlusen");
     List<String> uMyran = Arrays.asList("Bladlusen");
 
-
     @Test
-    final void getUnderlingsMyranTest(){
+    public final void getUnderlingsMyranTest(){
         List<String> list = new ArrayList<>();
-        List<String> underlings = r.getUnderlings("Myran", list);
+        List<String> underlings = r.getUnderlings("Myran",r.mapAvChefer(), list);
         assertEquals(underlings.size(), uMyran.size());
         assertFalse(underlings.retainAll(uMyran));
     }
 
     @Test
-    final void getUnderlingsRävenTest(){
+    public final void getUnderlingsRävenTest(){
         List<String> list = new LinkedList<>();
-        List<String> underlings = r.getUnderlings("Räven", list);
+        List<String> underlings = r.getUnderlings("Räven",r.mapAvChefer(), list);
         assertEquals(underlings.size(), uRäven.size());
         assertFalse(underlings.retainAll(uRäven));
     }
 
     @Test
-    final void getUnderlingsSkumtomtenTest(){
+    public final void getUnderlingsSkumtomtenTest(){
         List<String> list = new LinkedList<>();
-        List<String> underlings = r.getUnderlings("Skumtomten", list);
+        List<String> underlings = r.getUnderlings("Skumtomten",r.mapAvChefer(), list);
         assertEquals(underlings.size(), uSkumtomten.size());
         assertFalse(underlings.retainAll(uSkumtomten));
     }
 
     @Test
-    final void getUnderlingsTrötterTest(){
+    public final void getUnderlingsTrötterTest(){
         List<String> list = new LinkedList<>();
-        List<String> underlings = r.getUnderlings("Trötter", list);
+        List<String> underlings = r.getUnderlings("Trötter",r.mapAvChefer(), list);
         assertEquals(underlings.size(), uTrötter.size());
         assertFalse(underlings.retainAll(uTrötter));
     }
 
 
     @Test
-    final void getUnderlingsButterTest(){
+    public final void getUnderlingsButterTest(){
         List<String> list = new LinkedList<>();
-        List<String> underlings = r.getUnderlings("Butter", list);
+        List<String> underlings = r.getUnderlings("Butter",r.mapAvChefer(), list);
         assertEquals(underlings.size(), uButter.size());
         assertFalse(underlings.retainAll(uButter));
     }
 
     @Test
-    final void getUnderlingsGladerTest(){
+    public final void getUnderlingsGladerTest(){
         List<String> list = new LinkedList<>();
-        List<String> underlings = r.getUnderlings("Glader", list);
+        List<String> underlings = r.getUnderlings("Glader",r.mapAvChefer(), list);
         assertEquals(underlings.size(), uGlader.size());
         assertFalse(underlings.retainAll(uGlader));
     }
 
     @Test
-    final void getUnderlingsTomtenTest(){
+    public final void getUnderlingsTomtenTest(){
         List<String> list = new LinkedList<>();
-        List<String> underlings = r.getUnderlings("Tomten", list);
+        List<String> underlings = r.getUnderlings("Tomten",r.mapAvChefer(), list);
         assertEquals(underlings.size(), uTomten.size());
         assertFalse(underlings.retainAll(uTomten));
     }
-
 }

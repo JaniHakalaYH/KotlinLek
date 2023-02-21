@@ -4,22 +4,28 @@ import java.io.File
 
 //TODO: Advent of code år 2019 uppgift 1
 
-fun main(){
+
     val file = "src/main/kotlin/Uppgift4/Before/MassInput"
-    println(calculateFuelInput(getStringListFromFile(file)))
+    val intLista: List<Int> = File(file).readLines().map { it.toInt() }
 
+    fun calculateFuelInput(): Int {
+        return intLista.sumOf { (it / 3) - 2 }
+    }
+
+
+    fun calculateFuelInputForAllModules(int: Int): Int {
+        var summering = 0
+        for(x in intLista)
+            if ((intLista[x] / 3)-2 <= 0) {
+                        0
+            }else{
+                summering += x
+                calculateFuelInputForAllModules(x)
+        }
+        return summering
+    }
+
+fun main(){
+    println(calculateFuelInput())
+    println(calculateFuelInputForAllModules(calculateFuelInput()))
 }
-fun getStringListFromFile(file: String): List<String> = File(file).readLines()
-
-fun calculateFuelInput(list: List<String>): Long{
-    val list = list.map { it.toInt() }
-    return list.sumOf { (it / 3) - 2 }.toLong()
-}
-
-/*fun calculateFuelInputForAllModules(long: Long): Long {
-
-    return
-}
-*/
-
-

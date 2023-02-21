@@ -26,7 +26,6 @@ fun findGammaAndEpsilon(list: List<String>): Int{
     val epsilonRate = epsilon.joinToString("").toInt(2)
     val gammaRate = (gammaList.joinToString("").toInt(2))
 
-    println(gammaRate*epsilonRate)
     return gammaRate * epsilonRate
 }
 

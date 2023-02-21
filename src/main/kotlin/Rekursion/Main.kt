@@ -2,8 +2,8 @@ package Rekursion
 
 class Rekursion {
 
+    //TODO, skriv denna metod, glöm inte att den ska vara rekursiv!
     fun getUnderlings(searchFor: String, map: Map<String, List<Tomte>>, newlist: MutableList<String>): List<String> {
-        //TODO, skriv denna metod, glöm inte att den ska vara rekursiv!
         val list = map.getOrDefault(searchFor, listOf())
         if (list.isNotEmpty()) {
             for (x in list) {

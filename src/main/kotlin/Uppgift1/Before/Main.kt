@@ -13,7 +13,7 @@ fun main() {
 fun readFileLineByLine(fileName: Path): Int {
     var counter = 0
     val list = Files.readAllLines((fileName)).map { it.toInt() }
-    repeat(list.size - 1) {
+    repeat(list.size -1) {
         if (list[it] < list[it + 1]) {
             counter++
         }
@@ -31,7 +31,6 @@ fun readFileThreeLinesAtATime(fileName: Path): Int {
                     counter++
                 }
             }
-            println(counter)
         }catch (e: IOException) {
             e.printStackTrace()
         }

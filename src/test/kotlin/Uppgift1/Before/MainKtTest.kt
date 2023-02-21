@@ -1,4 +1,4 @@
-package Uppgift1.Before.Before
+package Uppgift1.Before
 
 import Uppgift1.Before.readFileLineByLine
 import Uppgift1.Before.readFileThreeLinesAtATime

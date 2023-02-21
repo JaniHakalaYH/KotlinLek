@@ -4,7 +4,7 @@ import java.io.IOException
 import java.nio.file.Files
 import java.nio.file.Path
 
-//TODO: Uppgift 2 från 2021 års advent of code
+//TODO: Advent of code 2021 dag 2
 fun main(){
     val file = Path.of("src/main/kotlin/Uppgift2/Before/MovementInput")
     getSubmarineInput(readSubmarineInputsFromFile(file))

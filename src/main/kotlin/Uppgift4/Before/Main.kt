@@ -6,23 +6,20 @@ import java.io.File
 
 fun main(){
     val file = "src/main/kotlin/Uppgift4/Before/MassInput"
-    //calculateFuelInput(file)
-    println(calculateFuelAgain(doCalculation(calculateFuelInput(getStringListFromFile(file)))))
+    println(calculateFuelInput(getStringListFromFile(file)))
+
 }
 fun getStringListFromFile(file: String): List<String> = File(file).readLines()
 
-fun calculateFuelInput(list: List<String>): Int{
+fun calculateFuelInput(list: List<String>): Long{
     val list = list.map { it.toInt() }
-    return list.sumOf { (it / 3) - 2 }
-}
-fun doCalculation(int: Int): Int{
-    var calculated = int/3-2
-    return calculated
-}
-fun calculateFuelAgain(int: Int): Int{
-    var calculated = int
-        return calculated
+    return list.sumOf { (it / 3) - 2 }.toLong()
 }
 
+/*fun calculateFuelInputForAllModules(long: Long): Long {
+
+    return
+}
+*/
 
 

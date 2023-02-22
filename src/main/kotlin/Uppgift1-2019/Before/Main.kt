@@ -28,7 +28,7 @@ import java.util.*
             //kalkylerar varje moduls startvärde
             val getfuel = calculateEachModule(mass)
             fuel = getfuel
-            //kalkylerar totalen av varje modul genom rekursion
+            //kalkylerar totalen av varje modul genom rekursion och lägger till det i fuel
             fuel += calculateFuelForModules(fuel)
             //lägg till totalvärden i lista
             list.add(fuel)
@@ -45,9 +45,10 @@ import java.util.*
         var extraFuel = calculateEachModule(int)
 
         while(extraFuel > 0){
-            //extrafuel är varje moduls bränsla räknat flera gånger på bränslet (((bränsle / 3-2) -> /3 -2) -> /3 -2 osv)))
+            //extrafuel är varje moduls bränsle räknat flera gånger på bränslet (((bränsle / 3-2) -> /3 -2) -> /3 -2 osv)))
             //sålänge extrafuel är över 0
             //totalfuel är totalen av all extrafuel adderat
+            //println(extraFuel)
             totalFuel += extraFuel
             extraFuel = calculateEachModule(extraFuel)
         }

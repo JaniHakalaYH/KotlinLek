@@ -10,4 +10,5 @@ fun main(){
 fun calculateFrequency(list: List<Int>): Int{ //Del 1
     return list.sumOf { it }
 }
+//Gjorde ingen after eftersom den hade sett likadan ut, hann inte med del 2
 

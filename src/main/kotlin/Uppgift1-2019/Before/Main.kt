@@ -41,6 +41,7 @@ import java.util.*
     fun calculateFuelForModules(int: Int): Int {
 
         var totalFuel = 0
+        //int här är input läst från textfilen
         var extraFuel = calculateEachModule(int)
 
         while(extraFuel > 0){
@@ -62,6 +63,6 @@ import java.util.*
     }
 
 fun main(){
-    calculateFuelInput()
-    addList(calculateFuel())
+    println(calculateFuelInput())
+    println(addList(calculateFuel()))
 }

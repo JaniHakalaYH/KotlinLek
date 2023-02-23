@@ -2,7 +2,6 @@ package Rekursion
 
 class Rekursion {
 
-    //TODO, skriv denna metod, glöm inte att den ska vara rekursiv!
     fun getUnderlings(searchFor: String, map: Map<String, List<Tomte>>, newlist: MutableList<String>): List<String> {
         val list = map.getOrDefault(searchFor, listOf())
         if (list.isNotEmpty()) {
@@ -24,4 +23,14 @@ class Rekursion {
             "Räven" to listOf(Tomte("Gråsuggan"), Tomte("Myran")),
             "Myran" to listOf(Tomte("Bladlusen"))
         )
+
+
+}
+
+fun main() {
+
+    val logic = Rekursion()
+    val list: MutableList<String> = mutableListOf()
+    println(logic.getUnderlings("Räven",logic.mapAvChefer(), list))
+
 }

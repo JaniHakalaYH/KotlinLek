@@ -2,11 +2,12 @@ package `Uppgift3-2021`.Before
 
 import java.io.File
 
-//TODO: Advent of code 2021 dag 3, Hann endast med del 1, del 2 verkar väldigt komplicerad
+//TODO: Advent of code 2021 dag 3, Hann endast med del 1
 fun main(){
     val file = "src/main/kotlin/Uppgift3-2021/Before/BinaryInput"
     fun getStringList(file: String): List<String> = File(file).readLines()
-    println(buildStringAndConvertToGamma(getGamma(countOnesInCertainPositionInList(getStringList(file))))*buildStringAndconvertToEpsilon(getEpsilon(countOnesInCertainPositionInList(getStringList(file)))))
+    println(buildStringAndConvertToGamma(getGamma(countOnesInCertainPositionInList(getStringList(file))))
+            *buildStringAndconvertToEpsilon(getEpsilon(countOnesInCertainPositionInList(getStringList(file)))))
 }
 fun countOnesInCertainPositionInList(list: List<String>): MutableList<Int>{
     var anotherList = MutableList(list[0].length){0}

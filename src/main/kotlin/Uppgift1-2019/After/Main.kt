@@ -10,8 +10,10 @@ import java.io.File
     fun solvePart2(): Int =
         modules.sumOf { it.fuelWithFuel() }
 
+    //extension function för utträkning som kan återanvändas
     private fun Int.fuel(): Int = (this / 3) - 2
 
+    //rekursionen ginsberg använder sig av
     private fun Int.fuelWithFuel(): Int =
         if(this < 9)  {
             0

@@ -2,7 +2,7 @@ package `Uppgift3-2021`.Before
 
 import java.io.File
 
-//TODO: Advent of code 2021 dag 3, Hann endast med del 1, del 2 verkar väldigt komplicerad
+//TODO: Advent of code 2021 dag 3, Hann endast med del 1, del 2 hanns inte med
 fun main(){
     val file = "src/main/kotlin/Uppgift3-2021/Before/BinaryInput"
     fun getStringList(file: String): List<String> = File(file).readLines()

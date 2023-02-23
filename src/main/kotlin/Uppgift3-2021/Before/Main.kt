@@ -2,13 +2,14 @@ package `Uppgift3-2021`.Before
 
 import java.io.File
 
-//TODO: Advent of code 2021 dag 3, Hann endast med del 1, del 2 hanns inte med
+//TODO: Advent of code 2021 dag 3, Hann endast med del 1
 fun main(){
     val file = "src/main/kotlin/Uppgift3-2021/Before/BinaryInput"
     fun getStringList(file: String): List<String> = File(file).readLines()
-    println(buildStringAndConvertToGamma(getGamma(countOnesInCertainPositionInList(getStringList(file))))*buildStringAndconvertToEpsilon(getEpsilon(countOnesInCertainPositionInList(getStringList(file)))))
+    println(buildStringAndConvertToGamma(getGamma(onesInCertainPositionInList(getStringList(file))))*
+            buildStringAndconvertToEpsilon(getEpsilon(onesInCertainPositionInList(getStringList(file)))))
 }
-fun countOnesInCertainPositionInList(list: List<String>): MutableList<Int>{
+fun onesInCertainPositionInList(list: List<String>): MutableList<Int>{
     var anotherList = MutableList(list[0].length){0}
 
     //räknar hur många ettor det finns i varje position i listan och gör en lista av antalen
@@ -22,7 +23,7 @@ fun countOnesInCertainPositionInList(list: List<String>): MutableList<Int>{
 fun getGamma(list: MutableList<Int>): MutableList<String>{
 
     var gammaAndEpsilonList = mutableListOf<String>()
-    //gör en ny listan med 1or och 0or beroende på om förra listans index hade fler 1or eller 0or
+    //gör en ny lista med 1or och 0or beroende på om förra listans index hade fler 1or eller 0or
     for(x in list){
         if (x > 500){
             gammaAndEpsilonList.add("1")

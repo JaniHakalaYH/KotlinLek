@@ -9,17 +9,40 @@ fun readAndCalculateFloor(list: List<String>): Int {
 
     var floor = 0
 
-    for(element in list){
-        if(element == "("){
-            floor++
-        }else{
-            floor--
+    for(element in list) {
+        for (x in element) {
+            if (x == '(') {
+                floor++
+            } else {
+                floor--
+            }
         }
     }
     println(floor)
     return floor
 }
+fun calculateBasement(list: List<String>): Int{
+    var floor = 0
+    var pos = 1
+    var hitBasement = false
 
+    for(element in list) {
+        for (x in element) {
+            if (x == '(')
+                floor++
+            else
+                floor--
+            if(!hitBasement){
+                if(floor == -1){
+                    return pos
+                }
+                pos++
+            }
+        }
+    }
+    return -1
+}
 fun main(){
     readAndCalculateFloor(stringLista)
+    println(calculateBasement(stringLista))
 }

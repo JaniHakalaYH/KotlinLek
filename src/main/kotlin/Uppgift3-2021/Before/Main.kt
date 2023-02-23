@@ -25,7 +25,7 @@ fun getGamma(list: MutableList<Int>): MutableList<String>{
     var gammaAndEpsilonList = mutableListOf<String>()
     //gör en ny lista med 1or och 0or beroende på om förra listans index hade fler 1or eller 0or
     for(x in list){
-        if (x > 500){
+        if (x > list.size/2){
             gammaAndEpsilonList.add("1")
         }else gammaAndEpsilonList.add("0")
     }
@@ -36,7 +36,7 @@ fun getEpsilon(list: MutableList<Int>): MutableList<String>{
     var gammaAndEpsilonList = mutableListOf<String>()
     //samma sak som förra fast inverted för att få epsilon
     for(x in list){
-        if (x > 500){
+        if (x > list.size/2){
             gammaAndEpsilonList.add("0")
         }else gammaAndEpsilonList.add("1")
     }

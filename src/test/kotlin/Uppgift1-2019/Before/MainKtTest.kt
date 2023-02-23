@@ -4,12 +4,19 @@ import org.junit.jupiter.api.Test
 
 class MainKtTest {
 
+    private val testinput = 118868
+    private val testMethod = calculateEachModule(testinput)
+    private val testMethod2 = calculateFuelForModules(testinput)
 
     @Test
-    fun calculateFuelInput() {
+    fun calculateEachModule() {
+        val expected = 39620
+        assert(expected == testMethod)
     }
 
     @Test
-    fun calculateFuelAgain() {
+    fun calculateFuelForModules() {
+        val expected = 59402
+        assert(expected == testMethod2)
     }
 }
